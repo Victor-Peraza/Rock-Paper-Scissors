@@ -40,11 +40,16 @@ function game() {
   for (let i = 1; i <= 5; i++) {
     let playerSelection = prompt("pick").toLowerCase();
     const computerSelection = getComputerChoice();
-    console.log("CPU:"+computerSelection)
-    console.log("Player: " + playerSelection)
+    console.log("CPU:"+computerSelection);
+    console.log("Player: " + playerSelection);
     console.log(playRound(playerSelection, computerSelection));
     console.log("CPU Score: " + cpuScore);
     console.log("Player Score: " + playerScore);
+  }
+  if (playerScore > cpuScore) {
+    console.log("Player Wins!");
+  } else {
+    console.log("CPU Wins...");
   }
 }
 
