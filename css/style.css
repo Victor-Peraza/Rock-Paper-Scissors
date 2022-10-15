@@ -1,0 +1,55 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", arial;
+}
+
+body,
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f2937;
+}
+
+button {
+  font-size: 90px;
+  padding: 30px 40px;
+  border-radius: 10px;
+  background-color: #8297b3;
+  border-width: 0px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+.res {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 100px;
+
+  margin-bottom: 100px;
+}
+
+#winnerOrLoser {
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+#result {
+  color: aliceblue;
+  font-size: 18px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 50px;
+}
