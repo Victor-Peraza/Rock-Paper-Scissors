@@ -1,39 +1,7 @@
-//Randomly chooses index to return rock paper or scissor
-let getComputerChoice = function () {
-  let arr = ["Rock", "Paper", "Scissors"];
-  let random = arr[Math.floor(Math.random() * arr.length)];
-  if (random == "Rock") {
-    cpuEmojiDisplay.textContent = "🪨";
-  }
-  if (random == "Paper") {
-    cpuEmojiDisplay.textContent = "📄";
-  }
-  if (random == "Scissors") {
-    cpuEmojiDisplay.textContent = "✂️";
-  }
-  return random;
-};
-
-function getPlayerChoice(playerSelection) {
-  if (playerSelection == "Rock") {
-
-  }
-
-  if (playerSelection == "Paper") {
-
-  }
-
-  if (playerSelection == "Scissors") {
-    
-  }
-
-}
-
 let cpuScore = 0;
 let playerScore = 0;
 let winOrLose = "";
 
-//Checks what beats what and returns winner or loser
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     winOrLose = "Tie!";
@@ -67,32 +35,17 @@ const cpuEmojiDisplay = document.querySelector("#cpuEmoji");
 
 const rockButton = document.querySelector("#rock");
 rockButton.addEventListener("click", () => {
-  result.textContent = playRound("Rock", getComputerChoice());
-  winnerOrLoser.textContent = winOrLose;
-  playerScoreDisplay.textContent = playerScore;
-  cpuScoreDisplay.textContent = cpuScore;
-  playerEmojiDisplay.textContent = "🪨";
-  game();
+  getPlayerChoice("Rock");
 });
 
 const paperButton = document.querySelector("#paper");
 paperButton.addEventListener("click", () => {
-  result.textContent = playRound("Paper", getComputerChoice());
-  winnerOrLoser.textContent = winOrLose;
-  playerScoreDisplay.textContent = playerScore;
-  cpuScoreDisplay.textContent = cpuScore;
-  playerEmojiDisplay.textContent = "📄";
-  game();
+  getPlayerChoice("Paper");
 });
 
 const scissorsButton = document.querySelector("#scissors");
 scissorsButton.addEventListener("click", () => {
-  result.textContent = playRound("Scissors", getComputerChoice());
-  winnerOrLoser.textContent = winOrLose;
-  playerScoreDisplay.textContent = playerScore;
-  cpuScoreDisplay.textContent = cpuScore;
-  playerEmojiDisplay.textContent = "✂️";
-  game();
+  getPlayerChoice("Scissors");
 });
 
 const btn = document.querySelectorAll("Button");
@@ -111,5 +64,40 @@ function game() {
     btn.forEach((elem) => {
       elem.disabled = true;
     });
+  }
+}
+
+//Randomly chooses index to return rock paper or scissor
+function getComputerChoice() {
+  let arr = ["Rock", "Paper", "Scissors"];
+  let random = arr[Math.floor(Math.random() * arr.length)];
+  if (random == "Rock") {
+    cpuEmojiDisplay.textContent = "🪨";
+  }
+  if (random == "Paper") {
+    cpuEmojiDisplay.textContent = "📄";
+  }
+  if (random == "Scissors") {
+    cpuEmojiDisplay.textContent = "✂️";
+  }
+  return random;
+}
+
+function getPlayerChoice(playerSelection) {
+  result.textContent = playRound(playerSelection, getComputerChoice());
+  winnerOrLoser.textContent = winOrLose;
+  playerScoreDisplay.textContent = playerScore;
+  cpuScoreDisplay.textContent = cpuScore;
+  game();
+  if (playerSelection == "Rock") {
+    playerEmojiDisplay.textContent = "🪨";
+  }
+
+  if (playerSelection == "Paper") {
+    playerEmojiDisplay.textContent = "📄";
+  }
+
+  if (playerSelection == "Scissors") {
+    playerEmojiDisplay.textContent = "✂️";
   }
 }

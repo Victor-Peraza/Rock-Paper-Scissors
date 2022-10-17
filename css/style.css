@@ -1,15 +1,14 @@
 * {
   padding: 0px;
   margin: 0px;
+  border: 0px;
+
   box-sizing: border-box;
   font-family: "Roboto", arial;
 }
 
 body,
 html {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #1f2937;
 }
 
@@ -25,12 +24,21 @@ button {
   display: flex;
   flex-direction: column;
 }
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #131e2b;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}
 
 .res {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
 
   margin-bottom: 100px;
 }
@@ -55,28 +63,27 @@ button {
 }
 
 .score {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 100px;
-    gap:200px;
-    color: aliceblue;
-    font-weight: bold;
-    font-size: larger;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  gap: 200px;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: larger;
 }
 .emojiChoiceDisplay {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 80px;
-    gap: 260px;
-    font-size: 50px;
-
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+  gap: 270px;
+  font-size: 80px;
 }
 
 .playerSide {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 .cpuSide {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
