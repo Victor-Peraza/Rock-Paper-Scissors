@@ -2,8 +2,32 @@
 let getComputerChoice = function () {
   let arr = ["Rock", "Paper", "Scissors"];
   let random = arr[Math.floor(Math.random() * arr.length)];
+  if (random == "Rock") {
+    cpuEmojiDisplay.textContent = "🪨";
+  }
+  if (random == "Paper") {
+    cpuEmojiDisplay.textContent = "📄";
+  }
+  if (random == "Scissors") {
+    cpuEmojiDisplay.textContent = "✂️";
+  }
   return random;
 };
+
+function getPlayerChoice(playerSelection) {
+  if (playerSelection == "Rock") {
+
+  }
+
+  if (playerSelection == "Paper") {
+
+  }
+
+  if (playerSelection == "Scissors") {
+    
+  }
+
+}
 
 let cpuScore = 0;
 let playerScore = 0;
@@ -36,30 +60,56 @@ function playRound(playerSelection, computerSelection) {
 const container = document.querySelector("#container");
 const result = document.querySelector("#result");
 const winnerOrLoser = document.querySelector("#winnerOrLoser");
+const playerScoreDisplay = document.querySelector("#player");
+const cpuScoreDisplay = document.querySelector("#cpu");
+const playerEmojiDisplay = document.querySelector("#playerEmoji");
+const cpuEmojiDisplay = document.querySelector("#cpuEmoji");
 
 const rockButton = document.querySelector("#rock");
 rockButton.addEventListener("click", () => {
-  playRound("Rock", getComputerChoice());
   result.textContent = playRound("Rock", getComputerChoice());
   winnerOrLoser.textContent = winOrLose;
-  console.log(winOrLose);
-  console.log(result);
+  playerScoreDisplay.textContent = playerScore;
+  cpuScoreDisplay.textContent = cpuScore;
+  playerEmojiDisplay.textContent = "🪨";
+  game();
 });
 
 const paperButton = document.querySelector("#paper");
 paperButton.addEventListener("click", () => {
-  playRound("Paper", getComputerChoice());
   result.textContent = playRound("Paper", getComputerChoice());
-  winnerOrLoser .textContent = winOrLose;
-  console.log(winOrLose);
-  console.log(result);
+  winnerOrLoser.textContent = winOrLose;
+  playerScoreDisplay.textContent = playerScore;
+  cpuScoreDisplay.textContent = cpuScore;
+  playerEmojiDisplay.textContent = "📄";
+  game();
 });
 
 const scissorsButton = document.querySelector("#scissors");
 scissorsButton.addEventListener("click", () => {
-  playRound("Scissors", getComputerChoice());
   result.textContent = playRound("Scissors", getComputerChoice());
-  winnerOrLoser .textContent = winOrLose;
-  console.log(winOrLose);
-  console.log(result);
+  winnerOrLoser.textContent = winOrLose;
+  playerScoreDisplay.textContent = playerScore;
+  cpuScoreDisplay.textContent = cpuScore;
+  playerEmojiDisplay.textContent = "✂️";
+  game();
 });
+
+const btn = document.querySelectorAll("Button");
+
+function game() {
+  if (playerScore == 5 && playerScore > cpuScore) {
+    winnerOrLoser.textContent = "Congrats! You won the game!";
+    btn.forEach((elem) => {
+      elem.disabled = true;
+    });
+  }
+
+  if (cpuScore == 5 && cpuScore > playerScore) {
+    winnerOrLoser.textContent = "Game Over! You Lost the game!";
+    console.log("loser");
+    btn.forEach((elem) => {
+      elem.disabled = true;
+    });
+  }
+}

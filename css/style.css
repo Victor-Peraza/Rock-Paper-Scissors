@@ -53,3 +53,30 @@ button {
 
   gap: 50px;
 }
+
+.score {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    gap:200px;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: larger;
+}
+.emojiChoiceDisplay {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+    gap: 260px;
+    font-size: 50px;
+
+}
+
+.playerSide {
+    display: flex;
+    gap: 10px;
+}
+.cpuSide {
+    display: flex;
+    gap: 10px;
+}
